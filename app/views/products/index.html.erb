@@ -10,8 +10,8 @@
 <div class="row">
   <% @products.each do |product| %>
     <div class="col-sm-2 col-md-4">
-    <p><%= image_tag(product.image_url, class: "img-responsive") %></p>
       <a href="#"><h1><%= product.name %></h1></a>
+      <p><%= image_tag(product.image_url, class: "img-responsive") %> </p>
       <p><%= product.description %></p>
       <p><%= product.color %></p>
       <p>$<%= product.price %></p>
@@ -23,7 +23,7 @@
       </div><!-- /col -->
     </tr>
 
-  
+
   <% end %>
 </tbody>
 </table>
