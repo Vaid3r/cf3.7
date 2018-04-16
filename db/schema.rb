@@ -22,12 +22,8 @@ ActiveRecord::Schema.define(version: 20180409044122) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "color"
-    t.decimal "price"
+    t.string "description"
+
   end
 
 end
