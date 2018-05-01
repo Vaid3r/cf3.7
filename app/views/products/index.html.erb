@@ -3,27 +3,7 @@
 <h1>Products</h1>
 
 
-<div class="row">
+
   <% @products.each do |product| %>
-    <div class="col-sm-2 col-md-4">
-      <a href="#"><h1><%= product.name %></h1></a>
-      <p><%= image_tag(product.image_url, class: "img-responsive") %> </p>
-      <p><%= product.description %></p>
-      <p><%= product.color %></p>
-      <p>$<%= product.price %></p>
-
-
-      <td><%= link_to 'Show', product %></td>
-      <td><%= link_to 'Edit', edit_product_path(product) %></td>
-      <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-     </tr>
-   <% end %>
- </tbody>
-</table>
-
-<br>
-<br>
-<br>
-<p>
-<td><%= link_to 'New Product', new_product_path %></p>
+    <%= render partial: "product", locals: {product: product} %>
+  <% end %>
