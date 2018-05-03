@@ -3,28 +3,49 @@
 <p>Phone:201-966-2667</p>
 <p>Email: mcluna1991@gmail.com</p>
 
+
+
 <div class="container header">
   <h1>Contact Information</h1>
   <%= flash[:notice] %>
 
-     <%= form_tag("/simple_pages/thank_you") do %>
+  <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+<div class="row">
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :message %>
+    <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
+  </div>
+</div>
+<%= form.submit "Send", class: "form_label" %>
+<% end %>
+
+
+    <!-- <%= form_tag("/simple_pages/thank_you") do %>
     <div class="row">
        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
          <div class="form-group">
            <%= label_tag :name %>
            <%= text_field_tag :name, nil, class: "form-control", placeholder: "Enter Name", required: "true"%>
-          </div><!--name-->
+          </div>
          <div class="form-group">
            <%= label_tag :email, "Email Address" %>
            <%= text_field_tag :email, nil, class: "form-control", placeholder: "Enter Email", required: "true", type: "email" %>
-         </div><!--email-->
+         </div>
        <div class="form-group">
          <%= label_tag :message %>
          <%= text_area_tag :message, nil, class: "form-control", placeholder: "Enter Message", required: "true" %>
          <%= submit_tag "Send" %>
            </button>
          <% end %>
-              </div><!--message-->
-    </div><!--div->
-    </div><!-- row-->
- </div>
+              </div>
+    </div><
+    </div>
+ </div>-->
