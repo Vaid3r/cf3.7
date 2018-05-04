@@ -3,6 +3,21 @@
 <p>Phone:201-966-2667</p>
 <p>Email: mcluna1991@gmail.com</p>
 
+<div class="form">
+  <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+<div class="row">
+  <div class="form-group">
+    <form role="form" class="form-inline">
+      <%= form.label :q, 'Search for:' %>
+      <%= form.text_field :q, id: 'q', value: params[:q] %>
+      <%= form.submit 'Search' %>
+  </div>
+</div>
+
+
+
+
+
 
 
 <div class="container header">

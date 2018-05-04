@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'simple_pages/landing_page'
 
   get '/products', to: 'products#index'
-  
+
 
   root  'simple_pages#landing_page'
 
