@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Cf37</title>
+    <%= flash[:notice] %>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -48,11 +49,17 @@
       <li class="dropdown">
 
       <li><a href="/simple_pages/contact">Contact</a></li>
-
-
-        </ul>
+      <li>
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      <% else %>
+        <%= link_to('Login', new_user_session_path) %>
+      <% end %>
       </li>
+
+
     </ul>
+      
   </nav>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
