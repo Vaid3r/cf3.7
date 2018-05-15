@@ -1,9 +1,8 @@
 <div class="container-header">
-<h1>Bikes of Berlin</h1>
+<h1>Contact Us</h1>
 <p>Marisa Luna</p>
 <p>Phone:201-966-2667</p>
 <p>Email: mcluna1991@gmail.com</p>
-</div>
 
 
 
@@ -16,25 +15,28 @@
 
 <h1>Contact Us</h1>
 
-<%= flash[:notice] %>
+  <%= flash[:notice] %>
 
-<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
-<div class="container-fluid">
-  <div class="row">
-    <div class="form-group">
-      <%= form.label :name %>
-      <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
-    </div>
-    <div class="form-group">
-      <%= form.label :email %>
-      <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
-    </div>
-    <div class="form-group">
-      <%= form.label :message %>
-      <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
+  <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :message %>
+        <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
+      </div>
     </div>
   </div>
 
   <%= form.submit "Send", class: "form_label" %>
+
+  <% end %>
 </div>
-<% end %>
+

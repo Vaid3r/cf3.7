@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+
+  
   has_many :orders
 
   has_many :comments
@@ -8,7 +10,9 @@ class Product < ApplicationRecord
     Product.where("name LIKE ?", "%#{search_term}%")
   end
 
-  def highest_rating_comment
-  comments.rating_desc.first
+
+  def average_rating
+  comments.average(:rating).to_f
   end
+
 end
