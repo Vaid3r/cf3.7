@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    #new line below
+    @products = Product.all.paginate(page: params[:page], per_page: 3)
       if params[:q]
         search_term = params[:q]
         if(Rails.env.production?)
@@ -14,15 +16,18 @@ class ProductsController < ApplicationController
         end
       else
         @products = Product.all
+        #not sure if this works bottom line
+        @products = Product.all.paginate(page: params[:page], per_page: 3)
       end
-      @products = @products.paginate(:page => params[:page], :per_page=>3)
+      #@products = @products.paginate(:page => params[:page], :per_page=>3)
     end
 
   # GET /products/1
   # GET /products/1.json
   def show
     #@comments = @product.comments.order("created_at DESC")
-    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
+    #@comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
+    @comments = @product.comments.paginate(page: params[:page], per_page: 3)
   end
 
 
