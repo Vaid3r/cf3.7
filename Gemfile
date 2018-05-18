@@ -44,11 +44,22 @@ group :production do
 end
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.7'
+end
+
+group :test do
+  gem 'database_cleaner'
+end
+
+group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
 end
+
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
