@@ -81,3 +81,4 @@ gem 'will_paginate-bootstrap'
 
 
 gem 'rails-controller-testing'
+gem 'stripe'
