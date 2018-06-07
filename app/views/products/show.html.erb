@@ -7,7 +7,12 @@
        <div class="thumbnail">
 
 
-          <%= image_tag @product.image_url, class: 'img-responsive' %>
+          
+
+        
+        
+         <%= image_tag("#{@product.image_url}", class: "thumbnail img-responsive img-zoom", data_zoom_image:"#{@product.image_url}") %>
+
 
          <div class="caption">
            <p>
