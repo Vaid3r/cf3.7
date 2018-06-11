@@ -1,24 +1,14 @@
-<div class="container-header">
-<h1>Contact Us</h1>
-<p>Marisa Luna</p>
-<p>Phone:201-966-2667</p>
-<p>Email: mcluna1991@gmail.com</p>
+<div class="container">
+  <h1>Contact Us</h1>
+  <p>Marisa Luna</p>
+  <p>Phone:201-966-2667</p>
+  <p>Email: mcluna1991@gmail.com</p>
+</div>
 
-
-
-
-
-
-
-
-
-
-<h1>Contact Us</h1>
-
-  <%= flash[:notice] %>
-
+  
+<div class="container">
   <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
-  <div class="container-fluid">
+  
     <div class="row">
       <div class="form-group">
         <%= form.label :name %>
@@ -33,7 +23,7 @@
         <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
       </div>
     </div>
-  </div>
+  
 
   <%= form.submit "Send", class: "form_label" %>
 
