@@ -25,14 +25,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="simple_pages/index">Bike Berlin</a>
+    <li><a class="navbar-brand">Bike Berlin <%= link_to "Home", root_url %></a></li>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/simple_pages/about">About <span class="sr-only">(current)</span></a></li>
-      <li class="active"><a href="/products">Products <span class="sr-only">(current)</span></a></li>
+      <li class="active"><%= link_to "About", simple_pages_about_url %>About <span class="sr-only">(current)</span></a></li>
+      <li class="active"><<%= link_to "Products", products_url %>Products <span class="sr-only">(current)</span></a></li>
 
     </ul>
             <%= form_tag(products_path, method: "get", class: "navbar-form navbar-nav") do %>
@@ -48,7 +48,7 @@
       <li><a href="#">Want to sell?</a></li>
       <li class="dropdown">
 
-      <li><a href="/simple_pages/contact">Contact</a></li>
+      <li><%= link_to "Contact", simple_pages_contact_url %>Contact</a></li>
       <li>
       <% if user_signed_in? %>
         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>

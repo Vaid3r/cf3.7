@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   get 'payments/create'
  
 
-  root 'simple_pages#landing_page'
+  root 'simple_pages/landing_page'
+  root 'product#index'
   
    
 
