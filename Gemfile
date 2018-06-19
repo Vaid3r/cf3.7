@@ -40,6 +40,7 @@ gem 'brakeman', :require => false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'dalli'
 
 group :production do
   gem 'pg'
