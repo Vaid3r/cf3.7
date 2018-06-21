@@ -1,16 +1,11 @@
  <div class="container">
    <p id="notice"><%= notice %></p>
  
-   <div class="row">
+   <div class="row" data-product-id="<%= @product.id %>">
 
     <!--<div class="col-sm-6 col-md-4">-->
        <div class="thumbnail">
 
-
-          
-
-        
-        
         <% if @product.image_url.present? %>
         <%= image_tag(@product.image_url, width: "350", class: "img-responsive img-zoom", data_zoom_image: "@product.image_url") %>
         <% end %>
@@ -54,11 +49,10 @@
           <p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div> </p>
 
           
-          <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
-
           
 
           <%= render 'comments' %>
+          <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
           <%= render 'new_comment' %>
 
           <%= will_paginate @comments %>
@@ -71,7 +65,12 @@
  
  
 
-   <%= link_to 'Edit', edit_product_path(@product) %> |
+
+
+    <% if current_user && current_user.admin?%>
+      <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-default" %>
+    <%end%>
+
    <%= link_to 'Back', products_path %>
  
  </div>
