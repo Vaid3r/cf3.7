@@ -246,7 +246,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   dalli
   database_cleaner
-  devise
+  devise (~> 4.2)
   elevatezoom-rails
   factory_bot_rails (~> 4.0)
   jbuilder (~> 2.5)
