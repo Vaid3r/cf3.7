@@ -1,5 +1,3 @@
-
-
 FactoryBot.define do
   sequence(:email) {|n| "user#{n}@testuser.com"}
   
