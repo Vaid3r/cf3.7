@@ -42,6 +42,8 @@ gem 'brakeman', :require => false
 # gem 'capistrano-rails', group: :development
 gem 'dalli'
 
+gem 'redis'
+
 gem 'redis-rails'
 
 group :production do
