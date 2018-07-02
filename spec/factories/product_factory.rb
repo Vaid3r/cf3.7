@@ -9,7 +9,7 @@ FactoryBot.define do
     name "Test Bike"
     description "A bike"
     image_url "bike.jpg"
-    colour "white"
+    color "white"
     price "2800"
   end
 end
